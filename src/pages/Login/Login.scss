@@ -1,0 +1,176 @@
+@import '../../styles/variables';
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+
+  &__left {
+    flex: 1;
+    background: $primary-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 80px;
+      align-self: flex-start;
+
+      img { height: 30px; }
+      span {
+        color: $white;
+        font-size: 22px;
+        font-weight: 700;
+      }
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  &__right {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    background: $white;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      padding: 40px;
+    }
+
+    .mobile-logo {
+      display: none;
+      margin-bottom: 40px;
+
+      @media (max-width: $mobile) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 20px;
+        color: $primary-dark;
+      }
+    }
+  }
+
+  &__form-header {
+    margin-bottom: 32px;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: $primary-dark;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: $text-secondary;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+
+    label {
+      font-size: 14px;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+
+      input {
+        flex: 1;
+        height: 50px;
+        padding: 0 16px;
+        border: 1px solid rgba(84, 95, 125, 0.3);
+        border-radius: $border-radius;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus {
+          border-color: $primary;
+        }
+
+        &.error {
+          border-color: $status-blacklisted;
+        }
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: $primary;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+      }
+    }
+
+    .error-text {
+      font-size: 12px;
+      color: $status-blacklisted;
+    }
+  }
+
+  &__forgot {
+    font-size: 12px;
+    color: $primary;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-top: -8px;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  &__submit {
+    height: 50px;
+    background: $primary;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s, opacity 0.2s;
+    margin-top: 8px;
+
+    &:hover { opacity: 0.9; }
+    &:disabled { opacity: 0.6; cursor: not-allowed; }
+  }
+}

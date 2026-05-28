@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 400;
+
+  &--active {
+    background: $status-active-bg;
+    color: $status-active;
+  }
+  &--inactive {
+    background: $status-inactive-bg;
+    color: $status-inactive;
+  }
+  &--pending {
+    background: $status-pending-bg;
+    color: $status-pending;
+  }
+  &--blacklisted {
+    background: $status-blacklisted-bg;
+    color: $status-blacklisted;
+  }
+}

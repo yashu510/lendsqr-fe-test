@@ -1,0 +1,146 @@
+@import '../../styles/variables';
+
+.header {
+  background: $white;
+  box-shadow: 3px 5px 20px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  padding: 0 30px 0 $sidebar-width;
+
+  @media (max-width: $mobile) {
+    padding: 0 16px;
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px;
+      color: $text-secondary;
+
+      @media (max-width: $mobile) {
+        display: flex;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    border: 1px solid $border;
+    border-radius: $border-radius;
+    overflow: hidden;
+    width: 400px;
+
+    @media (max-width: $tablet) {
+      width: 250px;
+    }
+
+    @media (max-width: $mobile) {
+      width: 180px;
+    }
+
+    input {
+      flex: 1;
+      height: 40px;
+      padding: 0 16px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: $text-secondary;
+
+      &::placeholder { color: $text-muted; }
+    }
+
+    button {
+      height: 40px;
+      width: 56px;
+      background: $primary;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      svg { color: white; }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: $mobile) {
+      gap: 12px;
+    }
+  }
+
+  &__docs {
+    font-size: 14px;
+    color: $primary-dark;
+    font-weight: 500;
+    text-decoration: underline;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__notification {
+    background: none;
+    border: none;
+    padding: 0;
+    color: $text-secondary;
+    position: relative;
+    cursor: pointer;
+
+    .badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 8px;
+      height: 8px;
+      background: $primary;
+      border-radius: 50%;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $primary, $primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: $primary-dark;
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    svg { color: $primary-dark; }
+  }
+}

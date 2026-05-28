@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+
+.dashboard {
+  padding: 40px;
+
+  @media (max-width: $mobile) {
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary-dark;
+    margin-bottom: 32px;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__stat-card {
+    background: $white;
+    border-radius: $border-radius-md;
+    padding: 26px;
+    box-shadow: $shadow-card;
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: $primary-dark;
+    }
+
+    &:nth-child(1) .icon-wrapper { background: rgba(223, 24, 255, 0.1); color: #DF18FF; }
+    &:nth-child(2) .icon-wrapper { background: rgba(87, 24, 255, 0.1); color: #5718FF; }
+    &:nth-child(3) .icon-wrapper { background: rgba(255, 84, 102, 0.1); color: #FF5466; }
+    &:nth-child(4) .icon-wrapper { background: rgba(255, 140, 0, 0.1); color: #FF8C00; }
+  }
+}
