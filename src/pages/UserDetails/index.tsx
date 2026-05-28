@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getUserFromStorage } from '../../utils/storage';
 import { mockUsers } from '../../data/mockUsers';
 import { User } from '../../types/user';
-import StatusBadge from '../../components/StatusBadge';
 import './UserDetails.scss';
 
 const tabs = ['General Details', 'Documents', 'Bank Details', 'Loans', 'Savings', 'App and System'];
